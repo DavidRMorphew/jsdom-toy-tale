@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
       
       const newToyDiv = document.createElement('div');
       newToyDiv.className = "card";
+      newToyDiv.id = element.id
       toyCollectionDiv.appendChild(newToyDiv);
       
       const toyName = document.createElement('h2')
