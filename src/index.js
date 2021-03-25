@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const addBtn = document.querySelector("#new-toy-btn");
   const toyFormContainer = document.querySelector(".container");
   const getToysUrl = "http://localhost:3000/toys"
+  const newToyForm = document.querySelector('form.add-toy-form');
 
   addBtn.addEventListener("click", () => {
     // hide & seek with the form
@@ -15,6 +16,26 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       toyFormContainer.style.display = "none";
     }
+  });
+  newToyForm.addEventListener('submit', function submitNewToy(event){
+    const submittedData = event.target
+    const submittedName = submittedData[0].value
+    const submittedImage = submittedData[1].value
+    const sendData = { 
+      "name": submittedName,
+      "image": submittedImage
+    }
+    fetch(getToysUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify(sendData)
+    })
+    .then(function(response){
+      return response.json();
+    })
   });
   return fetch(getToysUrl)
   .then(function(response){

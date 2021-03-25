@@ -47,6 +47,11 @@
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
       "likes": -2
+    },
+    {
+      "name": "Darth Vader",
+      "image": "https://s7.orientaltrading.com/is/image/OrientalTrading/VIEWER_ZOOM/darth-vader-cardboard-stand-up~13577316",
+      "id": 9
     }
   ]
 }
