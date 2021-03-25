@@ -52,6 +52,36 @@
       "name": "Darth Vader",
       "image": "https://s7.orientaltrading.com/is/image/OrientalTrading/VIEWER_ZOOM/darth-vader-cardboard-stand-up~13577316",
       "id": 9
+    },
+    {
+      "name": "Robocop",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/619X%2B1FGj9L._AC_SL1329_.jpg",
+      "id": 10
+    },
+    {
+      "name": "Robocop",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/619X%2B1FGj9L._AC_SL1329_.jpg",
+      "id": 11
+    },
+    {
+      "name": "Robocop",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/619X%2B1FGj9L._AC_SL1329_.jpg",
+      "id": 12
+    },
+    {
+      "name": "ED 209",
+      "image": "https://media.entertainmentearth.com/assets/images/2d0c4d01784b40a59cd78cd60f7f8624lg.jpg",
+      "id": 13
+    },
+    {
+      "name": "ED 209",
+      "image": "https://media.entertainmentearth.com/assets/images/2d0c4d01784b40a59cd78cd60f7f8624lg.jpg",
+      "id": 14
+    },
+    {
+      "name": "Xenomorph",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71W-3jrwSZL._AC_SL1357_.jpg",
+      "id": 15
     }
   ]
 }

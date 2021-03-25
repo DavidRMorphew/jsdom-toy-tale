@@ -2,10 +2,12 @@ let addToy = false;
 
 const toyCollectionDiv = document.getElementById('toy-collection')
 
+// const toyCards = document.getElementsByClassName('card')
+
 document.addEventListener("DOMContentLoaded", () => {
   const addBtn = document.querySelector("#new-toy-btn");
   const toyFormContainer = document.querySelector(".container");
-  const getToysUrl = "http://localhost:3000/toys"
+  const toysUrl = "http://localhost:3000/toys"
   const newToyForm = document.querySelector('form.add-toy-form');
 
   addBtn.addEventListener("click", () => {
@@ -18,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   newToyForm.addEventListener('submit', function submitNewToy(event){
+    event.preventDefault();
     const submittedData = event.target
     const submittedName = submittedData[0].value
     const submittedImage = submittedData[1].value
@@ -25,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "name": submittedName,
       "image": submittedImage
     }
-    fetch(getToysUrl, {
+    fetch(toysUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,8 +39,33 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(function(response){
       return response.json();
     })
+    .then(function(data){
+      const newToyDiv = document.createElement('div');
+      newToyDiv.className = "card";
+      newToyDiv.id = data.id
+      toyCollectionDiv.appendChild(newToyDiv);
+      
+      const toyName = document.createElement('h2')
+      toyName.innerHTML = data.name
+      newToyDiv.appendChild(toyName);
+      
+      const toyImage = document.createElement('img')
+      toyImage.src = data.image
+      toyImage.className = "toy-avatar"
+      newToyDiv.appendChild(toyImage);
+      
+      const likesTally = document.createElement('p')
+      likesTally.innerHTML = "0 Likes";
+      newToyDiv.appendChild(likesTally)
+
+      const likesButton = document.createElement('button')
+      likesButton.className = "like-btn"
+      likesButton.innerHTML = "Like <3"
+      newToyDiv.appendChild(likesButton)
+    })
   });
-  return fetch(getToysUrl)
+
+  return fetch(toysUrl)
   .then(function(response){
     return response.json();
   })
