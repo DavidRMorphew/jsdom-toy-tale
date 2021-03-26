@@ -60,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
   .catch(function(error){
     alert(error.message);
   })
+  // Why did this approach fail?
   // function clickLikes(){
   //   for (const likeButton of LikesButtons) {
   //       likeButton.addEventListener('click', function(event){
@@ -123,6 +124,7 @@ function updateLikes(toyId, likesNumber){
   })
   .then(function(json){
     const updatedLikesNumber = json.likes;
+    // ask about this
     const currentLikes = document.getElementById(`${json.id}`).querySelector('p')
     currentLikes.innerText = `${updatedLikesNumber} Likes`
   })
